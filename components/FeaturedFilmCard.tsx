@@ -69,14 +69,12 @@ export function FeaturedFilmCard({ film }: FeaturedFilmCardProps) {
               height="100%"
               style={{ position: 'absolute', top: 0, left: 0 }}
               config={{
-                youtube: {
-                  playerVars: {
-                    autoplay: 1,
-                    controls: 0,
-                    modestbranding: 1,
-                    rel: 0,
-                    showinfo: 0,
-                  },
+                playerVars: {
+                  autoplay: 1,
+                  controls: 0,
+                  modestbranding: 1,
+                  rel: 0,
+                  showinfo: 0,
                 },
               }}
             />
