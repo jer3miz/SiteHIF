@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { Plus, Edit, Trash2, Star } from 'lucide-react'
+import { Plus, Edit, Trash2, Star, Film } from 'lucide-react'
 import { FilmForm } from './FilmForm'
 
-interface Film {
+interface FilmData {
   id: string
   title: string
   slug: string
@@ -26,14 +26,14 @@ interface Category {
 }
 
 interface FilmManagerProps {
-  initialFilms: Film[]
+  initialFilms: FilmData[]
   categories: Category[]
 }
 
 export function FilmManager({ initialFilms, categories }: FilmManagerProps) {
-  const [films, setFilms] = useState<Film[]>(initialFilms)
+  const [films, setFilms] = useState<FilmData[]>(initialFilms)
   const [isFormOpen, setIsFormOpen] = useState(false)
-  const [editingFilm, setEditingFilm] = useState<Film | null>(null)
+  const [editingFilm, setEditingFilm] = useState<FilmData | null>(null)
 
   const handleDelete = async (id: string) => {
     if (!confirm('Êtes-vous sûr de vouloir supprimer ce film ?')) return
@@ -48,7 +48,7 @@ export function FilmManager({ initialFilms, categories }: FilmManagerProps) {
     }
   }
 
-  const handleEdit = (film: Film) => {
+  const handleEdit = (film: FilmData) => {
     setEditingFilm(film)
     setIsFormOpen(true)
   }
