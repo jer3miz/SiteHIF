@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import { Film, Lock, Mail } from 'lucide-react'
+import { Lock, Mail } from 'lucide-react'
+import { HIFLogo } from '@/components/HIFLogo'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -42,12 +43,14 @@ export default function LoginPage() {
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl flex items-center justify-center">
-              <Film className="w-8 h-8 text-white" />
-            </div>
+            <HIFLogo 
+              size="lg" 
+              showStudio={false}
+              color="#e0e0e0"
+            />
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">Administration HIF</h1>
-          <p className="text-gray-400">Connectez-vous pour gérer le studio</p>
+          <h1 className="text-3xl font-bold text-white mb-2">Administration</h1>
+          <p className="text-gray-400">Connectez-vous pour gérer la production</p>
         </div>
 
         <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-2xl">

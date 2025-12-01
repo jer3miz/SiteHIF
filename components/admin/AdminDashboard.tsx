@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { signOut } from 'next-auth/react'
-import { Film, Folder, LogOut, Plus } from 'lucide-react'
+import { Film, Folder, LogOut } from 'lucide-react'
+import { HIFLogo } from '../HIFLogo'
 import { FilmManager } from './FilmManager'
 import { CategoryManager } from './CategoryManager'
 
@@ -36,17 +37,22 @@ export function AdminDashboard({ initialFilms, initialCategories }: AdminDashboa
   const [activeTab, setActiveTab] = useState<'films' | 'categories'>('films')
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black relative overflow-x-hidden">
+      {/* Gradient background that stays fixed during scroll */}
+      <div className="fixed inset-0 bg-gradient-to-br from-black via-primary-900/30 to-black pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(48,15,89,0.15),transparent_50%)] pointer-events-none z-0" />
+      
       {/* Header */}
-      <header className="bg-gray-900 border-b border-gray-800">
+      <header className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800/50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
-                <Film className="w-6 h-6 text-white" />
-              </div>
+              <HIFLogo 
+                size="sm" 
+                showStudio={false}
+                color="#e0e0e0"
+              />
               <div>
-                <h1 className="text-xl font-bold text-white">HIF Studio</h1>
                 <p className="text-xs text-gray-400">Administration</p>
               </div>
             </div>
@@ -63,7 +69,7 @@ export function AdminDashboard({ initialFilms, initialCategories }: AdminDashboa
       </header>
 
       {/* Navigation Tabs */}
-      <div className="bg-gray-900/50 border-b border-gray-800">
+      <div className="relative bg-gray-900/50 backdrop-blur-sm border-b border-gray-800">
         <div className="container mx-auto px-6">
           <div className="flex space-x-8">
             <button
@@ -93,7 +99,7 @@ export function AdminDashboard({ initialFilms, initialCategories }: AdminDashboa
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 py-8">
+      <div className="relative z-10 container mx-auto px-6 py-8">
         {activeTab === 'films' && (
           <FilmManager initialFilms={initialFilms} categories={initialCategories} />
         )}

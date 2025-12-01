@@ -1,4 +1,4 @@
-# 🚀 Guide de déploiement - Site HIF Studio
+# 🚀 Guide de déploiement - Site HIF Production
 
 ## Déployer gratuitement sur Vercel
 
@@ -228,7 +228,7 @@ Si vous voulez essayer d'autres plateformes :
 
 ## 💡 Recommandation finale
 
-**Pour HIF Studio, je recommande :**
+**Pour HIF Production, je recommande :**
 
 1. **Hébergement** : Vercel (gratuit, parfait pour Next.js)
 2. **Base de données** : Neon PostgreSQL (gratuit, 500 MB)
@@ -240,6 +240,6 @@ Si vous voulez essayer d'autres plateformes :
 
 ---
 
-**Développé avec ❤️ pour HIF Studio**
+**Développé avec ❤️ pour HIF Production**
 
 

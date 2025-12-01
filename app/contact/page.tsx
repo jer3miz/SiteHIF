@@ -59,8 +59,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Email</h3>
-                    <a href="mailto:contact@hif-studio.com" className="text-gray-400 hover:text-primary-400 transition-colors">
-                      contact@hif-studio.com
+                    <a href="mailto:contact@hifproduction.com" className="text-gray-400 hover:text-primary-400 transition-colors">
+                      contact@hifproduction.com
                     </a>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
               Prenez rendez-vous pour discuter de vos besoins et découvrir comment nous pouvons vous aider.
             </p>
             <a
-              href="mailto:contact@hif-studio.com"
+              href="mailto:contact@hifproduction.com"
               className="inline-flex items-center space-x-2 px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary-600/50"
             >
               <Mail className="w-5 h-5" />
@@ -142,7 +142,7 @@ export default function ContactPage() {
 }
 
 export const metadata = {
-  title: 'Contact - HIF Studio',
-  description: 'Contactez HIF Studio pour vos projets de cinématographie',
+  title: 'Contact - HIF Production',
+  description: 'Contactez HIF Production pour vos projets de cinématographie',
 }
 

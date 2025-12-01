@@ -7,8 +7,8 @@ import { LoadingScreen } from '@/components/LoadingScreen'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'HIF Studio - Cinématographie',
-  description: 'Studio de cinématographie HIF',
+  title: 'HIF Production - Cinématographie',
+  description: 'Production de cinématographie HIF',
 }
 
 export default function RootLayout({

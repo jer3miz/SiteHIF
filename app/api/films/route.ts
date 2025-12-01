@@ -25,7 +25,7 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json()
-    const { title, description, youtubeUrl, categoryId, isFeatured } = body
+    const { title, description, youtubeUrl, thumbnailUrl, categoryId, isFeatured } = body
 
     // If this film is set as featured, unfeatured all other films
     if (isFeatured) {
@@ -41,6 +41,7 @@ export async function POST(request: Request) {
         slug: slugify(title),
         description,
         youtubeUrl,
+        thumbnailUrl: thumbnailUrl || null,
         categoryId: categoryId || null,
         isFeatured: isFeatured || false,
       },

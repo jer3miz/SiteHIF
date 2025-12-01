@@ -1,8 +1,8 @@
-# 🚀 Guide d'installation HIF Studio
+# 🚀 Guide d'installation HIF Production
 
 ## Installation rapide
 
-Suivez ces étapes pour installer et lancer le site web du studio HIF :
+Suivez ces étapes pour installer et lancer le site web de HIF Production :
 
 ### 1. Installer les dépendances
 

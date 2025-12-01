@@ -17,15 +17,30 @@ export function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simuler l'envoi (vous pouvez remplacer par un vrai appel API)
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Erreur lors de l\'envoi')
+      }
+
       setIsSubmitting(false)
       setIsSuccess(true)
       setFormData({ name: '', email: '', subject: '', message: '' })
       
       // Réinitialiser le message de succès après 5 secondes
       setTimeout(() => setIsSuccess(false), 5000)
-    }, 1500)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setIsSubmitting(false)
+      alert('Erreur lors de l\'envoi du message. Veuillez réessayer.')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

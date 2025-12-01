@@ -1,6 +1,6 @@
-# HIF Studio - Site de Cinématographie
+# HIF Production - Site de Cinématographie
 
-Site web élégant et minimaliste pour le studio de cinématographie HIF, avec des tons noirs et violets.
+Site web élégant et minimaliste pour la production de cinématographie HIF, avec des tons noirs et violets.
 
 ## 🎬 Fonctionnalités
 
@@ -190,7 +190,7 @@ npm start
 
 ## 📄 Licence
 
-Ce projet est créé pour le studio HIF.
+Ce projet est créé pour HIF Production.
 
 ## 🆘 Support
 
@@ -198,5 +198,5 @@ Pour toute question ou problème, contactez l'équipe de développement.
 
 ---
 
-**Développé avec ❤️ pour HIF Studio**
+**Développé avec ❤️ pour HIF Production**
 

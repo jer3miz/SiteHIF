@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma'
 import { FeaturedFilmCard } from '@/components/FeaturedFilmCard'
+import { HIFLogo } from '@/components/HIFLogo'
 import { Film, Award, Video, Play, ArrowRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 
@@ -22,9 +23,11 @@ export default async function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-primary-950/20 to-black">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.1),transparent_50%)] animate-pulse" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(48,15,89,0.15),transparent_50%)] animate-pulse" />
           <div className="absolute top-0 left-0 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-800/10 rounded-full blur-3xl animate-pulse delay-700" />
+          {/* Transition gradient at bottom for smooth section transition */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-primary-950/30 to-transparent" />
         </div>
 
         <div className="container mx-auto px-6 py-32 relative z-10">
@@ -33,19 +36,13 @@ export default async function Home() {
             {/* Left Side - Hero Content */}
             <div className="space-y-10">
               {/* Logo animé */}
-              <div className="flex items-center space-x-4 animate-fadeIn">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl blur-xl opacity-50 animate-pulse" />
-                  <div className="relative w-20 h-20 bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <Film className="w-10 h-10 text-white" />
-                  </div>
-                </div>
-                <div>
-                  <h1 className="text-8xl font-bold bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 bg-clip-text text-transparent animate-fillUp">
-                    HIF
-                  </h1>
-                  <p className="text-sm text-gray-400 tracking-[0.3em] uppercase">Studio</p>
-                </div>
+              <div className="animate-fadeIn">
+                <HIFLogo 
+                  size="2xl" 
+                  showStudio={true}
+                  animated={true}
+                  color="#e0e0e0"
+                />
               </div>
               
               {/* Titre principal */}
@@ -66,22 +63,6 @@ export default async function Home() {
                   Nous transformons vos idées en œuvres cinématographiques captivantes. 
                   Chaque projet est une aventure unique où l'art rencontre la technologie.
                 </p>
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-8 pt-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-white mb-2">50+</div>
-                  <div className="text-sm text-gray-400">Films réalisés</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-white mb-2">15+</div>
-                  <div className="text-sm text-gray-400">Prix remportés</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-white mb-2">100%</div>
-                  <div className="text-sm text-gray-400">Satisfaction</div>
-                </div>
               </div>
 
               {/* CTA Buttons */}
@@ -136,8 +117,10 @@ export default async function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-gradient-to-b from-black to-gray-900">
-        <div className="container mx-auto px-6">
+      <section className="py-24 relative bg-gradient-to-b from-black via-primary-950/10 to-gray-900">
+        {/* Smooth transition overlay */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-primary-950/20 to-transparent pointer-events-none" />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Notre expertise</h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -181,7 +164,7 @@ export default async function Home() {
 
       {/* Recent Films Section */}
       {recentFilms.length > 0 && (
-        <section className="py-24 bg-gray-900">
+        <section className="py-24 bg-gradient-to-b from-gray-900 to-black">
           <div className="container mx-auto px-6">
             <div className="flex items-center justify-between mb-12">
               <div>

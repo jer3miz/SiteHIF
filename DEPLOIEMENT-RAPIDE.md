@@ -7,7 +7,7 @@
 ```bash
 git init
 git add .
-git commit -m "Site HIF Studio prêt"
+git commit -m "Site HIF Production prêt"
 ```
 
 ### 2️⃣ GitHub (1 minute)
